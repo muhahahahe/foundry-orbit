@@ -1,0 +1,35 @@
+{
+    "name": "orbit",
+    "title": "Orbit",
+    "description": "Automatic planet movement based on time/date",
+    "version": "0.0.1",
+    "authors": [
+        {
+            "name": "muhahahahe",
+            "email": "muhahahahe@gmail.com",
+            "url": ""
+        }
+    ],
+    "languages": [
+        {
+            "lang": "en",
+            "name": "English",
+            "path": "lang/en.json"
+        }
+    ],
+    "scripts": [],
+    "socket": true,
+    "minimumCoreVersion": "0.8.6",
+    "compatibleCoreVersion": "0.8.9",
+    "url": "",
+    "manifest": "",
+    "download": "",
+    "dependencies": [
+        {
+            "name": "foundryvtt-simple-calendar"
+        },
+        {
+            "name": "lib-wrapper"
+        }
+    ]
+}
