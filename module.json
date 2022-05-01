@@ -18,7 +18,7 @@
     "manifest": "https://github.com/muhahahahe/foundry-orbit/blob/main/module.json",
     "download": "",
     "esmodules": [
-        "./src/index.js"
+        "./src/main.js"
     ],
     "dependencies": [
         {
