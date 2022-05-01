@@ -1,15 +1,9 @@
 {
     "name": "orbit",
-    "title": "Orbit",
-    "description": "Automatic planet movement based on time/date",
+    "title": "Orbit - Automated Planet Orbits",
+    "description": "Automatic planet movement based on time/date from simple calendar",
     "version": "0.0.1",
-    "authors": [
-        {
-            "name": "muhahahahe",
-            "email": "muhahahahe@gmail.com",
-            "url": ""
-        }
-    ],
+    "author": "muhahahahe",
     "languages": [
         {
             "lang": "en",
@@ -17,19 +11,19 @@
             "path": "lang/en.json"
         }
     ],
-    "scripts": [],
     "socket": true,
     "minimumCoreVersion": "0.8.6",
     "compatibleCoreVersion": "0.8.9",
-    "url": "",
-    "manifest": "",
+    "url": "https://github.com/muhahahahe/foundry-orbit",
+    "manifest": "https://github.com/muhahahahe/foundry-orbit/blob/main/module.json",
     "download": "",
+    "esmodules": [
+        "./src/index.js"
+    ],
     "dependencies": [
         {
-            "name": "foundryvtt-simple-calendar"
-        },
-        {
-            "name": "lib-wrapper"
+            "name": "foundryvtt-simple-calendar",
+            "manifest": "https://github.com/vigoren/foundryvtt-simple-calendar/blob/main/src/module.json"
         }
     ]
 }
