@@ -7,4 +7,4 @@ Hooks.on("canvasReady", () => {
         _orbit.orbitStop()
         orbitWasStarted = _orbit.started
     }
-})
+});

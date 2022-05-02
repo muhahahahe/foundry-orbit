@@ -1,0 +1,12 @@
+{
+    "orbit.settings.orbitStartOrientation.name": "Start Orientation",
+    "orbit.settings.orbitStartOrientation.hint": "The starting orientation of the orbit. Default North.",
+    "orbit.settings.orbitStartOrientation.north": "North",
+    "orbit.settings.orbitStartOrientation.east": "East",
+    "orbit.settings.orbitStartOrientation.south": "South",
+    "orbit.settings.orbitStartOrientation.west": "West",
+    "orbit.settings.orbitStartDate.name": "Start Date",
+    "orbit.settings.orbitStartDate.hint": "The starting date of the orbit. Default today.",
+    "orbit.settings.orbitSpeed.name": "Orbit Speed",
+    "orbit.settings.orbitSpeed.hint": "The speed of the orbit. Default 24h per 60 sec."
+}
