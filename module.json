@@ -8,7 +8,7 @@
         {
             "lang": "en",
             "name": "English",
-            "path": "lang/en.json"
+            "path": "./src/lang/en.json"
         }
     ],
     "socket": true,
@@ -17,8 +17,9 @@
     "url": "https://github.com/muhahahahe/foundry-orbit",
     "manifest": "https://github.com/muhahahahe/foundry-orbit/blob/main/module.json",
     "download": "",
-    "esmodules": [
-        "./src/main.js"
+    "scripts": [
+        "./src/main.js",
+        "./src/config.js"
     ],
     "dependencies": [
         {
