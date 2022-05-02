@@ -15,8 +15,8 @@
     "minimumCoreVersion": "0.8.6",
     "compatibleCoreVersion": "0.8.9",
     "url": "https://github.com/muhahahahe/foundry-orbit",
-    "manifest": "https://github.com/muhahahahe/foundry-orbit/blob/main/module.json",
-    "download": "",
+    "manifest": "https://raw.githubusercontent.com/muhahahahe/foundry-orbit/main/module.json",
+    "download": "https://raw.githubusercontent.com/muhahahahe/foundry-orbit/main/download/orbit.zip",
     "scripts": [
         "./src/main.js",
         "./src/config.js"
