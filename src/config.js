@@ -7,7 +7,7 @@ Hooks.once("socketlib.ready", () => {
 Hooks.on("getSceneControlButtons", (controls, scene, user) => {
     if (!game.user.isGM) return;
     if (!_orbit) _orbit = Orbit.get();
-    basictools = controls.find(c => c.name === "token").tools;
+    basictools = controls.find((c) => c["name"] == "token").tools;
     basictools.push({
         name: "Orbit",
         icon: "fas fa-sun",
@@ -66,7 +66,7 @@ Hooks.on("init", () => {
         config: true,
         type: Number,
         range: {
-            min: 0,
+            min: 1,
             max: 8760,
             step: 1,
         },
