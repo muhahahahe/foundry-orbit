@@ -20,7 +20,8 @@
     "scripts": [
         "./src/main.js",
         "./src/config.js",
-        "./src/classes.js"
+        "./src/classes.js",
+        "./src/helpers.js"
     ],
     "dependencies": [
         {
