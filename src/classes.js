@@ -44,6 +44,10 @@ class Orbit {
         canvas.app.ticker.add(this.orbitCompute);
     }
 
+    orbitStop() {
+        canvas.app.ticker.remove(this.orbitCompute);
+    }
+
     orbitCompute() {
         if (_orbit.executeOrbit && !game.paused && _orbit.started) {
             let perfStart, perfEnd;

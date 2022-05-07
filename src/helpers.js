@@ -1,4 +1,4 @@
-async function _patrolAnimateMovement(ray) {
+async function _orbitAnimateMovement(ray) {
     // Move distance is 10 spaces per second
     const s = canvas.dimensions.size;
     this._movement = ray;
