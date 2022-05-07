@@ -8,5 +8,9 @@
     "orbit.settings.orbitStartDate.name": "Start Date",
     "orbit.settings.orbitStartDate.hint": "The starting date of the orbit. Default today.",
     "orbit.settings.orbitSpeed.name": "Orbit Speed",
-    "orbit.settings.orbitSpeed.hint": "The speed of the orbit, hours per 60sec. Default 24h."
+    "orbit.settings.orbitSpeed.hint": "The speed of the orbit, hours per 60sec. Default 24h.",
+    "orbit.tokenConfig.enableOrbit.name": "Enable Orbit",
+    "orbit.tokenConfig.makeOrbit.name": "Enable Orbit Path.",
+    "orbit.tokenConfig.orbitPathName.name": "Orbit Path Name.",
+    "orbit.tokenConfig.orbitNodeIndex.name": "Orbit Node."
 }
