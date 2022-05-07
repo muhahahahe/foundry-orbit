@@ -7,7 +7,6 @@ Hooks.once("socketlib.ready", () => {
 Hooks.on("getSceneControlButtons", (controls, scene, user) => {
     if (game.user.isGM) {
         if (!_orbit) _orbit = Orbit.get();
-        if (!_pathOrbit) _pathOrbit = PathOrbiter.get();
         basictools = controls.find((c) => c["name"] == "token").tools;
         basictools.push({
             name: "Orbit",
@@ -16,7 +15,6 @@ Hooks.on("getSceneControlButtons", (controls, scene, user) => {
             title: game.i18n.localize("orbit.tools.orbitToggle.hint"),
             onClick: (toggle) => {
                 _orbit.started = toggle;
-                _pathOrbit.started = toggle;
             },
             toggle: true,
         }, {
@@ -26,8 +24,7 @@ Hooks.on("getSceneControlButtons", (controls, scene, user) => {
             name: "remapOrbitPaths",
             title: game.i18n.localize("orbit.tools.remapOrbitPaths.hint"),
             onClick: () => {
-                _pathOrbit.mapTokensAndOrbits();
-                _pathOrbit.resetPathIndex();
+                console.log("remapOrbitPaths");
             }
         });
     }
@@ -118,28 +115,24 @@ Hooks.on("createDrawing", () => {
 Hooks.on("updateDrawing", () => {
     if (game.user.isGM) {
         _orbit.mapTokens();
-        _pathOrbit.resetPathIndex();
     }
 });
 
 Hooks.on("deleteDrawing", () => {
     if (game.user.isGM) {
         _orbit.mapTokens();
-        _pathOrbit.resetPathIndex();
     }
 });
 
 Hooks.on("createToken", () => {
     if (game.user.isGM) {
         _orbit.mapTokens();
-        _pathOrbit.mapTokensAndOrbits();
     }
 });
 
 Hooks.on("deleteToken", () => {
     if (game.user.isGM) {
         _orbit.mapTokens();
-        _pathOrbit.mapTokensAndOrbits();
     }
 });
 
@@ -159,7 +152,6 @@ Hooks.on("updateToken", async (tokend, updates) => {
             }
             await token.document.setFlag(MODULE_NAME_ORBIT, "pathID", pathID);
         }
-        _pathOrbit.mapTokensAndOrbits();
         _orbit.mapTokens();
     }
 });
