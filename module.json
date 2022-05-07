@@ -28,6 +28,9 @@
         },
         {
             "name": "socketlib"
+        },
+        {
+            "name": "lib-wrapper"
         }
     ]
 }
