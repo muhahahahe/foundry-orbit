@@ -19,7 +19,8 @@
     "download": "https://raw.githubusercontent.com/muhahahahe/foundry-orbit/main/download/orbit.zip",
     "scripts": [
         "./src/main.js",
-        "./src/config.js"
+        "./src/config.js",
+        "./src/classes.js"
     ],
     "dependencies": [
         {
