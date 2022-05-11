@@ -10,7 +10,7 @@ Hooks.on("getSceneControlButtons", (controls, scene, user) => {
         basictools = controls.find((c) => c["name"] == "token").tools;
         basictools.push({
             name: "Orbit",
-            icon: "fas fa-solar-system",
+            icon: "fas fa-globe",
             active: _orbit.started,
             title: game.i18n.localize("orbit.tools.orbitToggle.hint"),
             onClick: (toggle) => {
@@ -20,7 +20,7 @@ Hooks.on("getSceneControlButtons", (controls, scene, user) => {
         }, {
             button: true,
             visible: true,
-            icon: "fas fa-arrow-rotate-right",
+            icon: "far fa-dot-circle",
             name: "remapOrbitPaths",
             title: game.i18n.localize("orbit.tools.remapOrbitPaths.hint"),
             onClick: () => {
@@ -37,7 +37,7 @@ Hooks.on("init", () => {
         scope: "world",
         config: true,
         type: Number,
-        chioces: {
+        choices: {
             0: game.i18n.localize("orbit.settings.orbitStartOrientation.north"),
             1: game.i18n.localize("orbit.settings.orbitStartOrientation.east"),
             2: game.i18n.localize("orbit.settings.orbitStartOrientation.south"),

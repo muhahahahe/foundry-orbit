@@ -7,14 +7,14 @@ class Orbit {
         this.orbitStartOrientation = game.settings.get(MODULE_NAME_ORBIT, "orbitStartOrientation");
         this.orbitSpeed = game.settings.get(MODULE_NAME_ORBIT, "orbitSpeed");
         this.orbitStartDate = game.settings.get(MODULE_NAME_ORBIT, "orbitStartDate");
-        this.DEBUG = false;
+        this.DEBUG = true;
     }
 
     static get() {
         return new Orbit();
     }
 
-    mapOrbitPaths() {
+    mapTokens() {
         let orbitCircles = canvas.drawings.placeables.filter((p) => p.data.text == "Orbit");
         this.tokens = [];
         canvas.tokens.placeables.filter((t) => t.document.getFlag(MODULE_NAME_ORBIT, "enableOrbit")).forEach((t) => {

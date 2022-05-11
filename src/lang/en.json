@@ -12,5 +12,7 @@
     "orbit.tokenConfig.enableOrbit.name": "Enable Orbit",
     "orbit.tokenConfig.makeOrbit.name": "Enable Orbit Path.",
     "orbit.tokenConfig.orbitPathName.name": "Orbit Path Name.",
-    "orbit.tokenConfig.orbitNodeIndex.name": "Orbit Node."
+    "orbit.tokenConfig.orbitNodeIndex.name": "Orbit Node.",
+    "orbit.tools.orbitToggle.hint": "Toggle Orbit On/Off.",
+    "orbit.tools.remapOrbitPaths.hint": "Remap Orbit Paths."
 }
