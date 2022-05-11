@@ -36,13 +36,14 @@ Hooks.on("init", () => {
         hint: game.i18n.localize("orbit.settings.orbitStartOrientation.hint"),
         scope: "world",
         config: true,
-        type: String,
+        type: Number,
         chioces: {
-            "north": game.i18n.localize("orbit.settings.orbitStartOrientation.north"),
-            "east": game.i18n.localize("orbit.settings.orbitStartOrientation.east"),
-            "south": game.i18n.localize("orbit.settings.orbitStartOrientation.south"),
-            "west": game.i18n.localize("orbit.settings.orbitStartOrientation.west"),
+            0: game.i18n.localize("orbit.settings.orbitStartOrientation.north"),
+            1: game.i18n.localize("orbit.settings.orbitStartOrientation.east"),
+            2: game.i18n.localize("orbit.settings.orbitStartOrientation.south"),
+            3: game.i18n.localize("orbit.settings.orbitStartOrientation.west"),
         },
+        default: 0,
         onChange: value => {
             console.log(`Orbit start orientation changed to ${value}`);
         }
