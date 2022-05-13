@@ -25,8 +25,7 @@
     ],
     "dependencies": [
         {
-            "name": "foundryvtt-simple-calendar",
-            "manifest": "https://github.com/vigoren/foundryvtt-simple-calendar/blob/main/src/module.json"
+            "name": "foundryvtt-simple-calendar"
         },
         {
             "name": "socketlib"

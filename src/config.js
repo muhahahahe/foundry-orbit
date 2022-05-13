@@ -4,8 +4,35 @@ Hooks.once("socketlib.ready", () => {
     _orbitSocket = socketlib.registerModule(MODULE_NAME_ORBIT);
 });
 
+Hooks.on("getSceneControlButtons", (controls, a, b) => {
+    if (game.user.isGM) {
+        if (!_orbit) _orbit = Orbit.get();
+        basictools = controls.find((c) => c["name"] == "token").tools;
+        basictools.push({
+            name: "Orbit",
+            icon: "fas fa-globe",
+            active: _orbit.started,
+            title: game.i18n.localize("orbit.tools.orbitToggle.hint"),
+            onClick: (toggle) => {
+                _orbit.started = toggle;
+            },
+            toggle: true,
+        }, {
+            button: true,
+            visible: true,
+            icon: "far fa-dot-circle",
+            name: "remapOrbitPaths",
+            title: game.i18n.localize("orbit.tools.remapOrbitPaths.hint"),
+            onClick: () => {
+                console.log("remapOrbitPaths");
+            }
+        });
+    }
+});
+
 Hooks.on("ready", () => {
     if (game.modules.get("foundryvtt-simple-calendar")?.active) {
+        console.log(game)
         game.settings.register(MODULE_NAME_ORBIT, "orbitStartOrientation", {
             name: game.i18n.localize("orbit.settings.orbitStartOrientation.name"),
             hint: game.i18n.localize("orbit.settings.orbitStartOrientation.hint"),
@@ -23,9 +50,7 @@ Hooks.on("ready", () => {
                 console.log(`Orbit start orientation changed to ${value}`);
             }
         });
-
-        const SimpleCalendar = game.modules.get("foundryvtt-simple-calendar");
-        console.log(SimpleCalendar);
+        
         // let currentCalendar = SimpleCalendar.api.getCurrentCalendar();
         // let months = currentCalendar.months;
         // let daysInMonth = months[0].numberOfDays;
@@ -107,31 +132,7 @@ Hooks.on("ready", () => {
             }
         });
 
-        libWrapper.register(MODULE_NAME_ORBIT,"Token.prototype.animateMovement", _orbitAnimateMovement, "OVERRIDE")
-
-        if (game.user.isGM) {
-            if (!_orbit) _orbit = Orbit.get();
-            basictools = controls.find((c) => c["name"] == "token").tools;
-            basictools.push({
-                name: "Orbit",
-                icon: "fas fa-globe",
-                active: _orbit.started,
-                title: game.i18n.localize("orbit.tools.orbitToggle.hint"),
-                onClick: (toggle) => {
-                    _orbit.started = toggle;
-                },
-                toggle: true,
-            }, {
-                button: true,
-                visible: true,
-                icon: "far fa-dot-circle",
-                name: "remapOrbitPaths",
-                title: game.i18n.localize("orbit.tools.remapOrbitPaths.hint"),
-                onClick: () => {
-                    console.log("remapOrbitPaths");
-                }
-            });
-        }
+        libWrapper.register(MODULE_NAME_ORBIT,"Token.prototype.animateMovement", _orbitAnimateMovement, "OVERRIDE");
     }
 });
 
