@@ -26,9 +26,9 @@ Hooks.on("ready", () => {
 
         const SimpleCalendar = game.modules.get("foundryvtt-simple-calendar");
         console.log(SimpleCalendar);
-        let currentCalendar = SimpleCalendar.api.getCurrentCalendar();
-        let months = currentCalendar.months;
-        let daysInMonth = months[0].numberOfDays;
+        // let currentCalendar = SimpleCalendar.api.getCurrentCalendar();
+        // let months = currentCalendar.months;
+        // let daysInMonth = months[0].numberOfDays;
         game.settings.register(MODULE_NAME_ORBIT, "orbitStartDateMonth", {
             name: game.i18n.localize("orbit.settings.orbitStartDateMonth.name"),
             hint: game.i18n.localize("orbit.settings.orbitStartDateMonth.hint"),
@@ -48,8 +48,8 @@ Hooks.on("ready", () => {
             onChange: value => {
                 console.log(`Orbit start month changed to ${value}`);
                 //find the number of days in the month
-                let month = months.find((month) => month.name == value);
-                daysInMonth = month.numberOfDays;
+                // let month = months.find((month) => month.name == value);
+                // daysInMonth = month.numberOfDays;
             }
         });
         //create an array of days from 1 to ... from the single Number in daysInMonth
