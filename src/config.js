@@ -50,6 +50,7 @@ Hooks.on("ready", () => {
             }
         });
 
+        const SimpleCalendar = game.modules.get("foundryvtt-simple-calendar");
         let currentCalendar = SimpleCalendar.api.getCurrentCalendar();
         let months = currentCalendar.months;
         let daysInMonth = months[0].numberOfDays;
