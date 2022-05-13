@@ -53,10 +53,10 @@ Hooks.on("ready", () => {
             }
         });
         //create an array of days from 1 to ... from the single Number in daysInMonth
-        let days
-        for (let i = 1; i <= daysInMonth; i++) {
-            days.push(i);
-        }
+        // let days
+        // for (let i = 1; i <= daysInMonth; i++) {
+        //     days.push(i);
+        // }
         game.settings.register(MODULE_NAME_ORBIT, "orbitStartDateDay", {
             name: game.i18n.localize("orbit.settings.orbitStartDateDay.name"),
             hint: game.i18n.localize("orbit.settings.orbitStartDateDay.hint"),
