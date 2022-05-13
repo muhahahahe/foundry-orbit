@@ -51,11 +51,12 @@ Hooks.on("ready", () => {
         });
 
         const SimpleCalendar = game.modules.get("foundryvtt-simple-calendar");
+        console.log(SimpleCalendar);
         let currentCalendar = SimpleCalendar.api.getCurrentCalendar();
         let months = currentCalendar.months;
         let daysInMonth = months[0].numberOfDays;
         game.settings.register(MODULE_NAME_ORBIT, "orbitStartDateMonth", {
-            name: game.i18n.localize("orbit.settings.orbitStartDate.name"),
+            name: game.i18n.localize("orbit.settings.orbitStartDateMonth.name"),
             hint: game.i18n.localize("orbit.settings.orbitStartDateMonth.hint"),
             scope: "world",
             config: true,
@@ -83,6 +84,7 @@ Hooks.on("ready", () => {
             days.push(i);
         }
         game.settings.register(MODULE_NAME_ORBIT, "orbitStartDateDay", {
+            name: game.i18n.localize("orbit.settings.orbitStartDateDay.name"),
             hint: game.i18n.localize("orbit.settings.orbitStartDateDay.hint"),
             scope: "world",
             config: true,
@@ -102,6 +104,7 @@ Hooks.on("ready", () => {
             }
         });
         game.settings.register(MODULE_NAME_ORBIT, "orbitStartDateYear", {
+            name: game.i18n.localize("orbit.settings.orbitStartDateYear.name"),
             hint: game.i18n.localize("orbit.settings.orbitStartDateYear.hint"),
             scope: "world",
             config: true,
