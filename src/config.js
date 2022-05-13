@@ -30,7 +30,7 @@ Hooks.on("getSceneControlButtons", (controls, scene, user) => {
     }
 });
 
-Hooks.on(MainApp.Hooks.Ready, () => {
+Hooks.on(SimpleCalendar.Hooks.Ready, () => {
     game.settings.register(MODULE_NAME_ORBIT, "orbitStartOrientation", {
         name: game.i18n.localize("orbit.settings.orbitStartOrientation.name"),
         hint: game.i18n.localize("orbit.settings.orbitStartOrientation.hint"),
