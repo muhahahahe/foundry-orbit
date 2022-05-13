@@ -6,7 +6,9 @@ class Orbit {
         this.started = false;
         this.orbitStartOrientation = game.settings.get(MODULE_NAME_ORBIT, "orbitStartOrientation");
         this.orbitSpeed = game.settings.get(MODULE_NAME_ORBIT, "orbitSpeed");
-        this.orbitStartDate = game.settings.get(MODULE_NAME_ORBIT, "orbitStartDate");
+        this.orbitStartDateMonth = game.settings.get(MODULE_NAME_ORBIT, "orbitStartDateMonth");
+        this.orbitStartDateDay = game.settings.get(MODULE_NAME_ORBIT, "orbitStartDateDay");
+        this.orbitStartDateYear = game.settings.get(MODULE_NAME_ORBIT, "orbitStartDateYear");
         this.DEBUG = true;
     }
 
