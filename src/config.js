@@ -60,14 +60,14 @@ Hooks.on("ready", () => {
             scope: "world",
             config: true,
             type: Number,
-            choices: {
-                // for each month in months add the choice form 1 to ...
-                ...months.map((month, index) => {
-                    return {
-                        [index]: month.name,
-                    };
-                }),
-            },
+            // choices: {
+            //     // for each month in months add the choice form 1 to ...
+            //     ...months.map((month, index) => {
+            //         return {
+            //             [index]: month.name,
+            //         };
+            //     }),
+            // },
             default: 0,
         
             onChange: value => {
@@ -87,14 +87,14 @@ Hooks.on("ready", () => {
             scope: "world",
             config: true,
             type: Number,
-            choices: {
-                // add a choice for each day in days
-                ...days.map((day) => {
-                    return {
-                        [day]: day,
-                    };
-                }),
-            },
+            // choices: {
+            //     // add a choice for each day in days
+            //     ...days.map((day) => {
+            //         return {
+            //             [day]: day,
+            //         };
+            //     }),
+            // },
             default: 0,
         
             onChange: value => {
@@ -106,14 +106,6 @@ Hooks.on("ready", () => {
             scope: "world",
             config: true,
             type: Number,
-            choices: {
-                // add a choice for each day in days
-                ...days.map((day) => {
-                    return {
-                        [day]: day,
-                    };
-                }),
-            },
             default: 0,
         
             onChange: value => {
