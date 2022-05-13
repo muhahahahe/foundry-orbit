@@ -6,15 +6,14 @@ Hooks.once("socketlib.ready", () => {
 
 Hooks.on("getSceneControlButtons", (controls, a, b) => {
     if (game.user.isGM) {
-        if (!_orbit) _orbit = Orbit.get();
         basictools = controls.find((c) => c["name"] == "token").tools;
         basictools.push({
             name: "Orbit",
             icon: "fas fa-globe",
             active: _orbit.started,
             title: game.i18n.localize("orbit.tools.orbitToggle.hint"),
-            onClick: (toggle) => {
-                _orbit.started = toggle;
+            onClick: () => {
+                console.log("Orbit button clicked");
             },
             toggle: true,
         }, {
@@ -24,7 +23,7 @@ Hooks.on("getSceneControlButtons", (controls, a, b) => {
             name: "remapOrbitPaths",
             title: game.i18n.localize("orbit.tools.remapOrbitPaths.hint"),
             onClick: () => {
-                console.log("remapOrbitPaths");
+                console.log("Orbit Remap button clicked");
             }
         });
     }
@@ -32,7 +31,9 @@ Hooks.on("getSceneControlButtons", (controls, a, b) => {
 
 Hooks.on("ready", () => {
     if (game.modules.get("foundryvtt-simple-calendar")?.active) {
-        console.log(game)
+        console.log("FoundryVTT Simple Calendar is active");
+        console.log(SimpleCalendar.api)
+        console.log("end of log");
         game.settings.register(MODULE_NAME_ORBIT, "orbitStartOrientation", {
             name: game.i18n.localize("orbit.settings.orbitStartOrientation.name"),
             hint: game.i18n.localize("orbit.settings.orbitStartOrientation.hint"),
@@ -50,7 +51,7 @@ Hooks.on("ready", () => {
                 console.log(`Orbit start orientation changed to ${value}`);
             }
         });
-        
+
         // let currentCalendar = SimpleCalendar.api.getCurrentCalendar();
         // let months = currentCalendar.months;
         // let daysInMonth = months[0].numberOfDays;
