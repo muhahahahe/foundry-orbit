@@ -49,15 +49,73 @@ Hooks.on("init", () => {
         }
     });
 
-    game.settings.register(MODULE_NAME_ORBIT, "orbitStartDate", {
+    let currentCalendar = SimpleCalendar.api.getCurrentCalendar();
+    let months = currentCalendar.months;
+    let daysInMonth = months[0].numberOfDays;
+    game.settings.register(MODULE_NAME_ORBIT, "orbitStartDateMonth", {
         name: game.i18n.localize("orbit.settings.orbitStartDate.name"),
-        hint: game.i18n.localize("orbit.settings.orbitStartDate.hint"),
+        hint: game.i18n.localize("orbit.settings.orbitStartDateMonth.hint"),
         scope: "world",
         config: true,
-        type: Date,
-        default: new Date(),
+        type: Number,
+        choices: {
+            // for each month in months add the choice form 1 to ...
+            ...months.map((month, index) => {
+                return {
+                    [index]: month.name,
+                };
+            }),
+        },
+        default: 0,
+        
         onChange: value => {
-            console.log(`Orbit start date changed to ${value}`);
+            console.log(`Orbit start month changed to ${value}`);
+            //find the number of days in the month
+            let month = months.find((month) => month.name == value);
+            daysInMonth = month.numberOfDays;
+        }
+    });
+    //create an array of days from 1 to ... from the single Number in daysInMonth
+    let days
+    for (let i = 1; i <= daysInMonth; i++) {
+        days.push(i);
+    }
+    game.settings.register(MODULE_NAME_ORBIT, "orbitStartDateDay", {
+        hint: game.i18n.localize("orbit.settings.orbitStartDateDay.hint"),
+        scope: "world",
+        config: true,
+        type: Number,
+        choices: {
+            // add a choice for each day in days
+            ...days.map((day) => {
+                return {
+                    [day]: day,
+                };
+            }),
+        },
+        default: 0,
+        
+        onChange: value => {
+            console.log(`Orbit start day changed to ${value}`);
+        }
+    });
+    game.settings.register(MODULE_NAME_ORBIT, "orbitStartDateYear", {
+        hint: game.i18n.localize("orbit.settings.orbitStartDateYear.hint"),
+        scope: "world",
+        config: true,
+        type: Number,
+        choices: {
+            // add a choice for each day in days
+            ...days.map((day) => {
+                return {
+                    [day]: day,
+                };
+            }),
+        },
+        default: 0,
+        
+        onChange: value => {
+            console.log(`Orbit start Year changed to ${value}`);
         }
     });
 
@@ -94,7 +152,7 @@ Hooks.on("renderTokenConfig", (app, html, data) => {
     <div class="form-group">
         <label>${game.i18n.localize("orbit.tokenConfig.orbitPathName.name")}</label>
         <input type="text" name="flags.${MODULE_NAME_ORBIT}.orbitPathName" value="">
-        <label>${game.i18n.localize("orbit.tokenConfig.orbitNodeIndex.hint")}</label>
+        <label>${game.i18n.localize("orbit.tokenConfig.orbitNodeIndex.name")}</label>
         <input type="text" name="flags.${MODULE_NAME_ORBIT}.orbitNodeIndex" value="">
     </div>`;
     const lockrotation = html.find("input[name='lockRotation']");
