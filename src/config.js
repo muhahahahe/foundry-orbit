@@ -32,7 +32,7 @@ Hooks.on("getSceneControlButtons", (controls, a, b) => {
 Hooks.on("ready", () => {
     if (game.modules.get("foundryvtt-simple-calendar")?.active) {
         console.log("FoundryVTT Simple Calendar is active");
-        console.log(SimpleCalendar.api)
+        console.log(SimpleCalendar.api.getAllMonths());
         console.log("end of log");
         game.settings.register(MODULE_NAME_ORBIT, "orbitStartOrientation", {
             name: game.i18n.localize("orbit.settings.orbitStartOrientation.name"),
